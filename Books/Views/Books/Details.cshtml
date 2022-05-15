@@ -1,0 +1,33 @@
+﻿@model Books.Models.Book
+@{
+    ViewBag.Title = "Details";
+}
+<h2 class="text-primary my-3">Book Details</h2>
+
+<ul class="list-group">
+    <li class="text-dark list-group-item active" >
+         @Model.Title
+    </li>
+    <li class="text-primary list-group-item">
+        @Model.Author
+    </li>
+    <li class="text-success list-group-item">
+        @Model.Category.Name
+    </li>
+    <li class="text-danger list-group-item">
+        @Model.Description
+    </li>
+    <li class="text-warning list-group-item" >
+        @Model.Addeon
+    </li>
+
+</ul>
+<a href="@Url.Action("Edit","Books",new {id=Model.Id})" class="btn btn-outline-primary mx-2 my-2">
+    <i class="icofont-edit-alt"></i>
+    Edit
+</a><a href="@Url.Action("Index","Books")" class="btn btn-secondary my-2 ">
+    <i class="icofont-home"></i>
+    Home
+</a>
+
+
